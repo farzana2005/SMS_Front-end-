@@ -29,7 +29,7 @@ const Result = () => {
 
 
 useEffect(()=>{
-  axios.get("http://localhost:5000/allstudent").then((data)=>{
+  axios.get("https://sms-backend-w3z3.onrender.com/allstudent").then((data)=>{
      console.log("Student Data:", data.data); 
      console.log(data)
     setStudentList(data.data)
@@ -66,7 +66,7 @@ let handleResultChange = (e, id)=>{
 }
 
 let handleSubmit = () => {
-  axios.post("http://localhost:5000/result", {
+  axios.post("https://sms-backend-w3z3.onrender.com/result", {
     "departmentname": departmentName,   // variable যাক
     "studentid": studentId,            // real student ID যাক
     "result": resultField
@@ -77,7 +77,7 @@ let handleSubmit = () => {
 
 
 useEffect(()=>{
-  axios.get("http://localhost:5000/result").then((data)=>{
+  axios.get("https://sms-backend-w3z3.onrender.com/result").then((data)=>{
     setResultList(data.data)
   })
 },[])

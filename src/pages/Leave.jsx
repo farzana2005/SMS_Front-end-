@@ -28,7 +28,7 @@ const Leave = () => {
 
 
 const handleDelete = (id) => {
-  axios.delete(`http://localhost:5000/leave/${id}`)
+  axios.delete(`https://sms-backend-w3z3.onrender.com/leave/${id}`)
     .then(() => {
       setLeaveList(leaveList.filter(item => item._id !== id));
     })
@@ -51,13 +51,13 @@ const handleShowModal = (id) => {
 
 //   if (editId) {
 //     // UPDATE
-//     axios.put(`http://localhost:5000/leave/${editId}`, {
+//     axios.put(`https://sms-backend-w3z3.onrender.com/leave/${editId}`, {
 //        studentname: studentName,       // <-- lowercase key
 //       departmentname: departmentName, // <-- lowercase key
 //       studentid: studentId       
 //     }).then(() => {
 //       // Updated list refresh
-//       axios.get("http://localhost:5000/leave").then((data) => {
+//       axios.get("https://sms-backend-w3z3.onrender.com/leave").then((data) => {
 //         setLeaveList(data.data);
 //       });
 
@@ -68,12 +68,12 @@ const handleShowModal = (id) => {
 
 //   } else {
 //     // CREATE
-//     axios.post("http://localhost:5000/leave", {
+//     axios.post("https://sms-backend-w3z3.onrender.com/leave", {
 //       studentName,
 //       departmentName,
 //       studentId
 //     }).then(() => {
-//       axios.get("http://localhost:5000/leave").then((data) => {
+//       axios.get("https://sms-backend-w3z3.onrender.com/leave").then((data) => {
 //         setLeaveList(data.data);
 //       });
 //       setShow(false);
@@ -86,7 +86,7 @@ const handleSubmit = () => {
 
   if (editId) {
     // UPDATE
-    axios.put(`http://localhost:5000/leave/${editId}`, {
+    axios.put(`https://sms-backend-w3z3.onrender.com/leave/${editId}`, {
       studentname: studentName,       // <-- lowercase key
       departmentname: departmentName, // <-- lowercase key
       studentid: studentId            // <-- lowercase key
@@ -102,7 +102,7 @@ const handleSubmit = () => {
 
   } else {
     // CREATE
-    axios.post("http://localhost:5000/leave", {
+    axios.post("https://sms-backend-w3z3.onrender.com/leave", {
       studentname: studentName,       // <-- lowercase key
       departmentname: departmentName, // <-- lowercase key
       studentid: studentId            // <-- lowercase key
@@ -123,7 +123,7 @@ const handleSubmit = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   // let handleSubmit =()=>{
-  //   axios.post("http://localhost:5000/leave",{
+  //   axios.post("https://sms-backend-w3z3.onrender.com/leave",{
   //     studentName: studentName,
   //     departmentName:departmentName,
   //     studentId: studentId
@@ -133,7 +133,7 @@ const handleSubmit = () => {
   // }
 
  useEffect(()=>{
-   axios.get("http://localhost:5000/leave").then((data)=>{
+   axios.get("https://sms-backend-w3z3.onrender.com/leave").then((data)=>{
 
     setLeaveList(data.data)
    })

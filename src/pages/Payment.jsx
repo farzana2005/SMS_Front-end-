@@ -11,7 +11,7 @@ const Payment = () => {
   let [amount, setAmount] = useState(0)
 
 let handlePayment =()=>{
-   axios.post("http://localhost:5000/payment",{
+   axios.post("https://sms-backend-w3z3.onrender.com/payment",{
     amount: 100,
     studentname: JSON.parse(localStorage.getItem("userInfo")).username
     
@@ -25,7 +25,7 @@ let handlePayment =()=>{
 }
 
 useEffect(()=>{
-   axios.get("http://localhost:5000/duepayment",).then((data)=>{
+   axios.get("https://sms-backend-w3z3.onrender.com/duepayment",).then((data)=>{
       setAmount(data.data)
     
    })

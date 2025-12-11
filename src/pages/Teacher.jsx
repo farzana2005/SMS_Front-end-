@@ -35,14 +35,14 @@ const [mongoId, setMongoId] = useState("") //new
 const handleCloseForUpdate = () => {
   console.log("hello",teacherid)
    //setLoading(true);
-   axios.patch(`http://localhost:5000/teacher/${teacherid}`, {
+   axios.patch(`https://sms-backend-w3z3.onrender.com/teacher/${teacherid}`, {
       teachername: teachername,
       departmentname: departmentname,
       teacherid: teacherid,
      phonenumber: phonenumber
 
      }).then(()=>{
-     axios.get("http://localhost:5000/allteacher").then((data)=>{
+     axios.get("https://sms-backend-w3z3.onrender.com/allteacher").then((data)=>{
      console.log("Teacher Data:", data.data);
     
         //setLoading(false);
@@ -60,14 +60,14 @@ const handleCloseForUpdate = () => {
 
   const handleClose = () => {
    // setLoading(true);
-    axios.post("http://localhost:5000/createteacher", {
+    axios.post("https://sms-backend-w3z3.onrender.com/createteacher", {
       teachername: teachername,
       departmentname: departmentname,
       teacherid: teacherid,
       phonenumber: phonenumber
 
     }).then(()=>{
-     axios.get("http://localhost:5000/allteacher").then((data)=>{
+     axios.get("https://sms-backend-w3z3.onrender.com/allteacher").then((data)=>{
      console.log("Teacher Data:", data.data);
     
         //setLoading(false);
@@ -97,7 +97,7 @@ const handleCloseModal = () => {
   // const handleShowModal = (id) =>{
   //   setUpdate(true)
   //  // console.log(id)
-  //   axios.get(`http://localhost:5000/teacher/${id}`).then((data)=>{
+  //   axios.get(`https://sms-backend-w3z3.onrender.com/teacher/${id}`).then((data)=>{
   //     console.log(data.data[0])
   //     setDepartmentName(data.data[0].departmentname)
   //     setPhoneNumber(data.data[0].phonenumber)
@@ -111,7 +111,7 @@ const handleCloseModal = () => {
 const handleShowModal = (id) =>{
   setUpdate(true)
 
-  axios.get(`http://localhost:5000/teacher/${id}`).then((data)=>{
+  axios.get(`https://sms-backend-w3z3.onrender.com/teacher/${id}`).then((data)=>{
     const teacher = data.data[0]
 
     setDepartmentName(teacher.departmentname)
@@ -150,7 +150,7 @@ useEffect(()=>{
 /* new start*/ 
 
 useEffect(()=>{
-  axios.get("http://localhost:5000/allteacher").then((data)=>{
+  axios.get("https://sms-backend-w3z3.onrender.com/allteacher").then((data)=>{
      console.log("Teacher Data:", data.data);
     setTeacherList(data.data)
   })
@@ -160,9 +160,9 @@ useEffect(()=>{
 
 let handleDelete = (id)=>{
   console.log("Deleting:", id);
-  axios.post("http://localhost:5000/delete",{ id })
+  axios.post("https://sms-backend-w3z3.onrender.com/delete",{ id })
   .then(()=>{
- axios.get("http://localhost:5000/allteacher").then((data)=>{
+ axios.get("https://sms-backend-w3z3.onrender.com/allteacher").then((data)=>{
      console.log("Teacher Data:", data.data);
     setTeacherList(data.data);
      

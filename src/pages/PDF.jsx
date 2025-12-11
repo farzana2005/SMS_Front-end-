@@ -19,7 +19,7 @@ const [file, setFile] = useState("");
 let [booklist,setBookList] = useState([]);
 // const handleClose = () => {
 //   console.log(file);
-//   axios.post("http://localhost:5000/uploadbook",{
+//   axios.post("https://sms-backend-w3z3.onrender.com/uploadbook",{
 //     name:name,
 //     departmentname:departmentname,
 //     writer:writer,
@@ -48,7 +48,7 @@ let [booklist,setBookList] = useState([]);
 
 //   try {
 //     const res = await axios.post(
-//       "http://localhost:5000/uploadbook",
+//       "https://sms-backend-w3z3.onrender.com/uploadbook",
 //       formData
 //     );
 
@@ -72,7 +72,7 @@ let [booklist,setBookList] = useState([]);
 
 //   try {
 //     const res = await axios.post(
-//       "http://localhost:5000/uploadbook",
+//       "https://sms-backend-w3z3.onrender.com/uploadbook",
 //       formData,
 //       {
 //         headers: { "Content-Type": "multipart/form-data" }
@@ -85,7 +85,7 @@ let [booklist,setBookList] = useState([]);
 //     setShow(false);
 
 //     // ✅ Upload সফল হলে লিস্ট আবার লোড করো
-//     axios.get("http://localhost:5000/allbook").then((data)=>{
+//     axios.get("https://sms-backend-w3z3.onrender.com/allbook").then((data)=>{
 //       setBookList(data.data);
 //     });
 
@@ -107,7 +107,7 @@ const handleClose = async () => {
 
   try {
     const res = await axios.post(
-      "http://localhost:5000/uploadbook",
+      "https://sms-backend-w3z3.onrender.com/uploadbook",
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" }
@@ -147,7 +147,7 @@ let handleChange =(e)=>{
 };
 
 useEffect(()=>{
-axios.get("http://localhost:5000/allbook").then((data)=>{
+axios.get("https://sms-backend-w3z3.onrender.com/allbook").then((data)=>{
    setBookList(data.data);
 });
 },[]);
@@ -250,7 +250,7 @@ axios.get("http://localhost:5000/allbook").then((data)=>{
           <td>Mark</td>
           <td>otto</td>
           <td>@hghg</td>
-            <td><Link to={`http://localhost:5000/${item.url}`} target='_blank'>Read</Link></td>
+            <td><Link to={`https://sms-backend-w3z3.onrender.com/${item.url}`} target='_blank'>Read</Link></td>
          </tr>
 ))} */}
 
@@ -263,7 +263,7 @@ axios.get("http://localhost:5000/allbook").then((data)=>{
     <td>{item.writer}</td>
     <td>{item.serial}</td>
     <td>
-      <Link to={`http://localhost:5000/${item.url}`} target='_blank'>
+      <Link to={`https://sms-backend-w3z3.onrender.com/${item.url}`} target='_blank'>
          <Button variant="outline-danger"  style={{ fontSize: '15px', padding: '5px 20px' }} >
       Read
     </Button>

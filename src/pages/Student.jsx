@@ -32,14 +32,14 @@ let [searchList,setSearchList] = useState ([])
 const handleCloseForUpdate = () => {
   console.log("hello",studentid)
    //setLoading(true);
-   axios.patch(`http://localhost:5000/student/${studentid}`, {
+   axios.patch(`https://sms-backend-w3z3.onrender.com/student/${studentid}`, {
       studentname: studentname,
       departmentname: departmentname,
       studentid: studentid,
      phonenumber: phonenumber
 
      }).then(()=>{
-     axios.get("http://localhost:5000/allstudent").then((data)=>{
+     axios.get("https://sms-backend-w3z3.onrender.com/allstudent").then((data)=>{
      console.log("Student Data:", data.data);
     
         //setLoading(false);
@@ -58,14 +58,14 @@ const handleCloseForUpdate = () => {
 
   const handleClose = () => {
    // setLoading(true);
-    axios.post("http://localhost:5000/createstudent", {
+    axios.post("https://sms-backend-w3z3.onrender.com/createstudent", {
       studentname: studentname,
       departmentname: departmentname,
       studentid: studentid,
       phonenumber: phonenumber
 
     }).then(()=>{
-     axios.get("http://localhost:5000/allstudent").then((data)=>{
+     axios.get("https://sms-backend-w3z3.onrender.com/allstudent").then((data)=>{
      console.log("Student Data:", data.data);
     
         //setLoading(false);
@@ -95,7 +95,7 @@ const handleCloseModal = () => {
   const handleShowModal = (id) =>{
     setUpdate(true)
    // console.log(id)
-    axios.get(`http://localhost:5000/student/${id}`).then((data)=>{
+    axios.get(`https://sms-backend-w3z3.onrender.com/student/${id}`).then((data)=>{
       console.log(data.data[0])
       setDepartmentName(data.data[0].departmentname)
       setPhoneNumber(data.data[0].phonenumber)
@@ -118,7 +118,7 @@ useEffect(()=>{
 },[])
 
 useEffect(()=>{
-  axios.get("http://localhost:5000/allstudent").then((data)=>{
+  axios.get("https://sms-backend-w3z3.onrender.com/allstudent").then((data)=>{
      console.log("Student Data:", data.data);
     setStudentList(data.data)
   })
@@ -126,9 +126,9 @@ useEffect(()=>{
 
 let handleDelete = (id)=>{
   console.log("Deleting:", id);
-  axios.post("http://localhost:5000/delete",{ id })
+  axios.post("https://sms-backend-w3z3.onrender.com/delete",{ id })
   .then(()=>{
- axios.get("http://localhost:5000/allstudent").then((data)=>{
+ axios.get("https://sms-backend-w3z3.onrender.com/allstudent").then((data)=>{
      console.log("Student Data:", data.data);
     setStudentList(data.data);
      

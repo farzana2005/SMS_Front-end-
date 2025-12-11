@@ -59,7 +59,7 @@ const Registration = () => {
 //     }
 //   }
 //   if(userName && email && password){
-//     axios.post("http://localhost:5000/registration",{
+//     axios.post("https://sms-backend-w3z3.onrender.com/registration",{
 //        username: userName,
 //       email: email,
 //       password: password
@@ -97,7 +97,7 @@ let handleFormSubmit = (e)=>{
 
   if(!isValid) return;
 
-  axios.post("http://localhost:5000/registration",{
+  axios.post("https://sms-backend-w3z3.onrender.com/registration",{
     username: userName,
     email: email,
     password: password
