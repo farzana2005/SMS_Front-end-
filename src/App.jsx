@@ -30,8 +30,7 @@ function App() {
         <Route path="/leave" element={<Leave/>}/>
         <Route path="/result" element={<Result/>}/>
         <Route path="/payment" element={<Payment/>}/>
-        <Route path="/paymentsuccess" element={<PaymentSuccess />} />
-
+       
        
       </Routes>
         
